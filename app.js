@@ -100,7 +100,8 @@ const draw = () => {
 
     Ball.update_force(balls);
 
-    balls.forEach(ball=>ball.move());
-    balls.forEach(ball=>ball.draw());
-
+    for(let i=0;i<balls.length;i++){
+        balls[i].move();
+        balls[i].draw();
+    }
 }
