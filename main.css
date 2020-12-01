@@ -36,7 +36,7 @@ body{
 }
 
 .main-nav__links{
-    width: calc(90% - 50px);
+    width: 70%;
     text-align: right;
     list-style: none;
     display: inline-block;
@@ -44,7 +44,7 @@ body{
 
 .nav-link{
     display: inline-block;
-    margin: 0 25px;
+    margin: 0 10px;
 }
 
 .nav-link a{
@@ -84,8 +84,12 @@ body{
     width: 100%;
     background-color: black;
     color: white;
-    padding: 20px;
+    padding: 0;
     text-align: center;
+}
+
+.main-footer > p{
+    padding: 20px;
 }
 
 .section-1{
