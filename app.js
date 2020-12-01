@@ -32,7 +32,8 @@ class Ball{
         const list = [];
         const size = 80;
         for(let i=0;i<size;i++){
-            const [x,y] = [c.width*Math.random(),c.height*Math.random()];
+            const x = c.width*Math.random();
+            const y = c.height*Math.random();
             list.push(new Ball(x,y));
         }
         return list;
