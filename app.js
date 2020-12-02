@@ -11,8 +11,6 @@ class Ball{
     constructor(x,y){
         this.x = x;
         this.y = y;
-        // this.x = c.width/2;
-        // this.y = c.height/2;
         this.angle = 2*Math.PI*Math.random();
         this.vel = 0;
         this.xv = this.vel*Math.cos(this.angle);
@@ -41,6 +39,8 @@ class Ball{
     move(){
         this.x += this.xv;
         this.y += this.yv;
+        this.xv *= .9999;
+        this.yv *= .9999;
         if(this.x < 0){
             this.x = 0;
             this.xv = Math.abs(this.xv);
