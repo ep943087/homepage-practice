@@ -15,14 +15,14 @@ class Ball{
         this.vel = 0;
         this.xv = this.vel*Math.cos(this.angle);
         this.yv = this.vel*Math.sin(this.angle);
-        this.radius = 2+Math.random()*1;
-        this.color = Ball.random_color();
-        this.GC = 5;
+        this.radius = 2+Math.random()*2;
+        this.color = Ball.random_color(this.radius);
+        this.GC = 1;
     }
-    static random_color(){
+    static random_color(radius){
         const colors = ["red","blue","rgb(0,255,0)"];
         const r = Math.floor(Math.random()*colors.length);
-        return "white";
+        return "rgba(255,255,255,"+(radius/4)+")";
     }
     static init_balls(){
         c.width = c.offsetWidth;
@@ -78,7 +78,7 @@ class Ball{
             for(let j=i+1;j<balls.length;j++){
                 const distance = Ball.distance(balls[i],balls[j]);
                 if(distance > 15){
-                    const acc = balls[i].GC*(balls[i].radius)/(distance*distance);
+                    const acc = balls[i].GC*(balls[i].radius*balls[j].radius)/(distance*distance);
                     const ang1 = Ball.get_angle(balls[i],balls[j]);
                     const ang2 = Ball.get_angle(balls[j],balls[i]);
                     balls[i].add_force(acc,ang1);

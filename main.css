@@ -5,23 +5,31 @@
 
 body{
     font-family: monospace;
+    overflow-x: hidden;
+}
+
+header{
+    padding-top: 5rem;
 }
 
 .main-nav{
     position: fixed;
     top: 0;
     left: 0;
-    padding: 10px;
+    padding: .3rem;
+    height: 4rem;
     background-color: white;
-    opacity: .9;
     z-index: 1;
-    width: 100%;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .main-nav__brand a{
-    font-size: 20px;
-    display: inline-block;
-    padding: 8px;
+    font-size: 1.5rem;
+    margin: 5px;
+    padding: .8rem;
     border-radius: 8px;
     background-color: black;
     color: white;
@@ -32,24 +40,23 @@ body{
 .main-nav__brand a:hover{
     color: black;
     background-color: white;
-    border: 1px solid black; 
+    border: 1px solid black;
 }
 
 .main-nav__links{
-    width: 70%;
-    text-align: right;
     list-style: none;
-    display: inline-block;
+    display: none;
+    margin: 20px;
 }
 
 .nav-link{
-    display: inline-block;
-    margin: 0 10px;
+    margin: 0 35px;
 }
 
 .nav-link a{
     text-decoration: none;
     color: black;
+    font-size: 1.5rem;
 }
 
 .nav-link a:hover{
@@ -58,7 +65,6 @@ body{
 
 
 .main-header{
-    margin-top: 60px;
     display: block;
     width: 100%;
     height: 300px;
@@ -102,4 +108,84 @@ body{
     width: 100%;
     height: 500px;
     background: linear-gradient(to right top,white,black);
+}
+
+.backdrop{
+    width: 100vw;
+}
+
+.toggle-menu{
+    display: none;
+    position: fixed;
+    top: 4.7rem;
+    height: 50vh;
+    width: 100vw;
+    background-color: white;
+    z-index: 100;
+}
+
+.toggle-menu > ul{
+    display: flex;
+    list-style-type: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    height: 100%;
+}
+
+.toggle-menu > ul > li{
+    margin: .7rem;
+}
+
+.toggle-menu > ul > li > a{
+    color: black;
+    text-decoration: none;
+}
+
+.toggle-menu > ul > li > a:hover{
+    border-bottom: 5px solid black;
+}
+
+.open{
+    display: block;
+}
+
+.toggle-button{
+    padding: 5px;
+    margin: 40px;
+    display: flex;
+    width:3rem;
+    height: 3rem;
+    flex-direction: column;
+    justify-content: space-between;
+    border: none;
+    background: transparent;
+}
+
+.toggle-button:hover{
+    cursor: pointer;
+}
+
+.toggle-button:focus{
+    outline: none;
+}
+
+.toggle-button__line{
+    width: 100%;
+    height: .2rem;
+    background-color: black;
+}
+
+
+@media (min-width: 40rem){
+    .main-nav__links{
+        display: flex;
+    }
+    .toggle-button{
+        display: none;
+    }
+    .toggle-menu{
+        display: none;
+    }
 }
